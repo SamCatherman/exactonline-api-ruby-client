@@ -9,7 +9,7 @@ require File.expand_path("../response", __FILE__)
 
 # from https://developers.exactonline.com/#Example retrieve access token.html
 
-# This whole class is going to be replaced due to Exact Online's new policies.
+# This whole to_s is going to be replaced due to Exact Online's new policies.
 # https://support.exactonline.com/community/s/knowledge-base#All-All-HNO-Concept-general-security-gen-auth-totpc
 
 module Elmas
@@ -155,9 +155,8 @@ module Elmas
   class OauthResponse < Response
     def body
       puts "OauthResponse Class - response: #{@response.inspect}"
-      puts "OauthResponse Class - response.body.class: #{@response.inspect.body.class}"
-      puts "OauthResponse Class - response.body.to_s: #{@response.inspect.body.to_s}"
-      
+      puts "OauthResponse Class - response.body.class: #{@response.body.class}"
+      puts "OauthResponse Class - response.body.to_s: #{@response.body.to_s}"
       
       JSON.parse(@response.body)
     end

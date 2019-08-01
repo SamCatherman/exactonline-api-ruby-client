@@ -154,9 +154,9 @@ end
 module Elmas
   class OauthResponse < Response
     def body
-
-      # JSON.parse(@response.body)
-      @response.body
+      puts "OauthResponse Class - response: #{@response.inspect}"
+      JSON.parse(@response.body)
+      # @response.body
     end
 
     def access_token

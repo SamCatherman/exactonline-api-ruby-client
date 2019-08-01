@@ -29,8 +29,9 @@ module Elmas
     def refresh_authorization
       warn "[DEPRECATION] `refresh_authorization` is deprecated. Please implement your own authorization methods instead."
       puts "refresh_token: #{refresh_token}"
-      puts "get_refresh_token: #{get_refresh_token(refresh_token)}"
+      puts "get_refresh_token: #{get_refresh_token(refresh_token).inspect}"
       OauthResponse.new(get_refresh_token(refresh_token)).tap do |response|
+        puts "inside oauth response block: #{response.inspect}"
         Elmas.configure do |config|
           config.access_token = response.access_token
           config.refresh_token = response.refresh_token

@@ -31,8 +31,8 @@ module Elmas
       puts "refresh_token: #{refresh_token}"
       puts "get_refresh_token: #{get_refresh_token(refresh_token).inspect}"
       puts "get_refresh_token class: #{get_refresh_token(refresh_token).class}"
-      puts "get_refresh_token access: #{get_refresh_token(refresh_token).access_token}"
-      puts "get_refresh_token refresh: #{get_refresh_token(refresh_token).refresh_token}"
+      # puts "get_refresh_token access: #{get_refresh_token(refresh_token).access_token}"
+      # puts "get_refresh_token refresh: #{get_refresh_token(refresh_token).refresh_token}"
       OauthResponse.new(get_refresh_token(refresh_token)).tap do |response|
         puts "inside oauth response block: #{response.inspect}"
         Elmas.configure do |config|

@@ -156,7 +156,7 @@ module Elmas
     def body
       puts "OauthResponse Class - response: #{@response.inspect}"
       puts "OauthResponse Class - response.body.class: #{@response.body.class}"
-      puts "OauthResponse Class - response.body.to_s: #{@response.body.to_s}"
+      puts "OauthResponse Class - response.body parsed: #{JSON.parse(@response.body.to_s)}"
       
       JSON.parse(@response.body)
     end
